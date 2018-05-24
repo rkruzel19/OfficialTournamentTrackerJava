@@ -2,6 +2,8 @@ package DBOs;
 
 import java.util.ArrayList;
 import java.util.Date;
+import application.SQLConnector;
+
 
 public class Tournament {
 
@@ -12,13 +14,17 @@ public class Tournament {
     private int totalPot;
     private ArrayList<Result> playerResults = new ArrayList<>();
 
-    public Tournament(Date date, int numberOfPlayers, int buyIn, int totalPot) {
-//        this.tournamentID = TournamentDB.getNumberOfTournaments();
-        this.tournamentID = 1;
+    public Tournament( int numberOfPlayers, int buyIn, int totalPot) {
+        this.tournamentID = generateTournamentID();
         this.date = date;
         this.numberOfPlayers = numberOfPlayers;
         this.buyIn = buyIn;
         this.totalPot = totalPot;
+    }
+
+    public long generateTournamentID(){
+        SQLConnector sqlConnector = new SQLConnector();
+        return sqlConnector.getNumberOfTournaments() + 1;
     }
 
     public void setPlayerResults(ArrayList<Result> playerResults) {

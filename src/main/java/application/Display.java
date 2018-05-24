@@ -1,3 +1,5 @@
+package application;
+
 public class Display {
 
     public static void welcome(){

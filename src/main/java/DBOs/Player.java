@@ -1,5 +1,7 @@
 package DBOs;
 
+import application.SQLConnector;
+
 import java.util.ArrayList;
 
 public class Player {
@@ -10,11 +12,15 @@ public class Player {
     ArrayList<Result> myResults;
 
     public Player(String name){
-//        this.playerID = PlayerDB.getPlayerDBsize() + 1;
-        this.playerID = 1;
+        this.playerID = generatePlayerID();
         this.name = name;
         overallProfit = 0;
         myResults = new ArrayList<>();
+    }
+
+    public long generatePlayerID(){
+        SQLConnector sqlConnector = new SQLConnector();
+        return sqlConnector.getNumberOfPlayers() + 1;
     }
 
     public long getPlayerID() {
