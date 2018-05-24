@@ -13,7 +13,8 @@ public class Tournament {
     private ArrayList<Result> playerResults = new ArrayList<>();
 
     public Tournament(Date date, int numberOfPlayers, int buyIn, int totalPot) {
-        this.tournamentID = TournamentDB.getNumberOfTournaments();
+//        this.tournamentID = TournamentDB.getNumberOfTournaments();
+        this.tournamentID = 1;
         this.date = date;
         this.numberOfPlayers = numberOfPlayers;
         this.buyIn = buyIn;

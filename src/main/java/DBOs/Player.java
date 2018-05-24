@@ -10,7 +10,8 @@ public class Player {
     ArrayList<Result> myResults;
 
     public Player(String name){
-        this.playerID = PlayerDB.getPlayerDBsize() + 1;
+//        this.playerID = PlayerDB.getPlayerDBsize() + 1;
+        this.playerID = 1;
         this.name = name;
         overallProfit = 0;
         myResults = new ArrayList<>();
