@@ -32,7 +32,7 @@ public class SQLConnector {
         long playerID = -1;
         try {
             Statement statement = sqlConnection.createStatement();
-            ResultSet results = statement.executeQuery("select count(*) from playerTable");
+            ResultSet results = statement.executeQuery("select count(*) from playerTable20");
             while (results.next()){
                 playerID = results.getLong(1);
             }
